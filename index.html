@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sito del Matrimonio di Ana e Domenico">
+    <title>Ana & Domenico - Wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">A <span class="brand-ampersand">&</span> D</div>
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="navHome">Home</a></li>
+            <li><a href="#info" data-i18n="navInfo">Info</a></li>
+            <li><a href="#rsvp" data-i18n="navRsvp">RSVP</a></li>
+            <li><a href="#accommodation" data-i18n="navAccommodation">Alloggi</a></li>
+            <li><a href="#tourism" data-i18n="navTourism">Turismo</a></li>
+            <li><a href="#food" data-i18n="navFood">Cibo</a></li>
+        </ul>
+        <div class="lang-switcher">
+            <button id="lang-es" class="lang-btn active">ES</button>
+            <span class="lang-separator">|</span>
+            <button id="lang-it" class="lang-btn">IT</button>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header id="home" class="section hero">
+        <div class="container hero-layout">
+            <div class="hero-text fade-in-up" style="font-style: italic;">
+                <h1 class="title">Ana <span class="ampersand">&</span> Domenico</h1>
+                <p class="subtitle" data-i18n="heroSubtitle">Ci sposiamo!</p>
+                <p class="date">
+                    22 Agosto 2026<br>
+                    <span style="display:inline-block; margin-top: 8px;">Pazo de Moreira</span><br>
+                    <span data-i18n="heroLocation" style="display:inline-block; margin-top: 4px;">Ponteareas, Galizia</span>
+                </p>
+                
+                <div class="hero-ornament fade-in-up" style="transition-delay: 0.15s">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                    </svg>
+                </div>
+
+                <div id="countdown" class="countdown fade-in-up" style="transition-delay: 0.2s">
+                    <!-- script will populate this -->
+                </div>
+                <p class="hero-placeholder fade-in-up" style="transition-delay: 0.3s; margin-top: 3rem; font-size: 1.1rem; line-height: 1.6; opacity: 0.9;" data-i18n="heroPlaceholder">Testo Segnaposto...</p>
+            </div>
+            
+            <div class="hero-img-container fade-in-up" style="transition-delay: 0.4s">
+                <img src="foto-coppia.jpg" alt="Ana e Domenico" class="hero-image" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'; this.alt='Foto segnaposto (salva la tua foto come foto-coppia.jpg)'">
+            </div>
+        </div>
+    </header>
+
+    <section id="info" class="section bg-sage">
+        <div class="container fade-in-up" style="font-style: italic;">
+            <h2 class="section-title fade-in-up" data-i18n="infoTitle">Informazioni</h2>
+            <div class="info-grid">
+                <div class="info-card card fade-in-up" style="transition-delay: 0.1s">
+                    <h3 data-i18n="infoPrebodaTitle" style="color: var(--clr-eucalyptus); margin-bottom: 1.5rem; text-align: center; border-bottom: 1px solid rgba(189,203,184,0.3); padding-bottom: 0.8rem; font-size: 1.8rem;">Preboda</h3>
+                    <p class="small-text" style="text-align:center; margin-top:-1rem; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-body); letter-spacing: 2px;" data-i18n="infoPrebodaDate">21 Agosto 2026</p>
+                    <h4>📍 <span data-i18n="infoLocationTitle">Location</span></h4>
+                    <p class="highlight-text"><strong><a href="https://share.google/eH7DnKt94DVAnjvW6" target="_blank" style="color: inherit; text-decoration: underline;">O Sanatorio</a></strong></p>
+                    <p data-i18n="infoPrebodaCity">Pontevedra</p>
+                    <div style="margin-top: 1.5rem;">
+                        <h4>🕒 <span data-i18n="infoTimeTitle">Orario</span></h4>
+                        <p data-i18n="infoPrebodaTime">Inizio: <strong>20:00</strong></p>
+                    </div>
+                </div>
+                
+                <div class="info-card card fade-in-up" style="transition-delay: 0.25s">
+                    <h3 data-i18n="infoBodaTitle" style="color: var(--clr-eucalyptus); margin-bottom: 1.5rem; text-align: center; border-bottom: 1px solid rgba(189,203,184,0.3); padding-bottom: 0.8rem; font-size: 1.8rem;">Boda</h3>
+                    <p class="small-text" style="text-align:center; margin-top:-1rem; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-body); letter-spacing: 2px;" data-i18n="infoBodaDate">22 Agosto 2026</p>
+                    <h4>📍 <span data-i18n="infoLocationTitle">Location</span></h4>
+                    <p class="highlight-text"><strong><a href="https://gloriadomecqcatering.com/pazo-moreira/" target="_blank" style="color: inherit; text-decoration: underline;">Pazo de Moreira</a></strong></p>
+                    <p data-i18n="infoBodaCity">Ponteareas, Galizia</p>
+                    <div style="margin-top: 1.5rem;">
+                        <h4>🕒 <span data-i18n="infoTimeTitle">Orario</span></h4>
+                        <p data-i18n="infoBodaTime">Inizio Cerimonia: <strong>13:00</strong></p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <h4>🚌 <span data-i18n="infoBusTitle">Navetta</span></h4>
+                        <p data-i18n="infoBodaBus">Partenza alle <strong>12:15</strong> da <a href="https://maps.app.goo.gl/6qJfuxFLxmpvCWQb8" target="_blank" style="text-decoration: underline; font-weight: normal; color: inherit;">Praza de Galicia</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section bg-sage">
+        <div class="container fade-in-up">
+            <h2 class="section-title" data-i18n="rsvpTitle">RSVP</h2>
+            <p class="section-subtitle" data-i18n="rsvpSubtitle">Vi preghiamo di confermare la vostra presenza entro il 15 Luglio 2026.</p>
+            
+            <div class="form-container card">
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="rsvpName">Nome e Cognome</label>
+                        <input type="text" id="name" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label data-i18n="rsvpAttendance">Ci sarai?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="attending" value="yes" required> 
+                                <span class="radio-custom"></span>
+                                <span data-i18n="rsvpYes">Sì, con gioia!</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attending" value="no"> 
+                                <span class="radio-custom"></span>
+                                <span data-i18n="rsvpNo">Purtroppo non potrò</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests" data-i18n="rsvpGuests">Numero di adulti (incluso te)</label>
+                        <input type="number" id="guests" min="1" max="10" value="1" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="children" data-i18n="rsvpChildren">Numero di bambini</label>
+                        <input type="number" id="children" min="0" max="10" value="0" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="diet" data-i18n="rsvpDiet">Restrizioni alimentari o allergie</label>
+                        <textarea id="diet" rows="3" placeholder="..." class="form-control" data-placeholder-i18n="rsvpDietPlaceholder"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="bus-transfer">
+                            <span class="checkbox-custom"></span>
+                            <span class="bus-text" data-i18n="rsvpBus">Desidero usufruire del servizio bus navetta.</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group bus-extras-group hidden" id="bus-extras-group">
+                        <div style="display:flex; gap: 1.5rem; flex-wrap: wrap;">
+                           <div style="flex:1; min-width: 150px;">
+                               <label for="bus-journey" data-i18n="rsvpBusJourney">Tragitto</label>
+                               <select id="bus-journey" class="form-control">
+                                   <option value="both" data-i18n="rsvpBusBoth">Andata e Ritorno</option>
+                                   <option value="going" data-i18n="rsvpBusGoing">Solo Andata</option>
+                                   <option value="return" data-i18n="rsvpBusReturn">Solo Ritorno</option>
+                               </select>
+                           </div>
+                           <div style="flex:1; min-width: 150px;">
+                               <label for="bus-location" data-i18n="rsvpBusLocation">Punto di Partenza</label>
+                               <select id="bus-location" class="form-control">
+                                   <option value="Caldas de Reis">Caldas de Reis</option>
+                                   <option value="Pontevedra">Pontevedra</option>
+                               </select>
+                           </div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                           <label for="bus-seats" data-i18n="rsvpBusSeats">Quanti posti servono sull'autobus?</label>
+                           <input type="number" id="bus-seats" min="1" max="10" value="1" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <span data-i18n="rsvpSubmit">Conferma Presenza</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    
+                    <div id="form-message" class="form-message hidden">
+                        <span data-i18n="rsvpSuccess">Grazie per aver risposto!</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="accommodation" class="section bg-light">
+        <div class="container fade-in-up">
+            <h2 class="section-title fade-in-up" data-i18n="accTitle">Dove Dormire</h2>
+            <p class="section-subtitle fade-in-up" style="transition-delay: 0.1s" data-i18n="accSubtitle">Alcune strutture consigliate vicino alla location per un comodo soggiorno.</p>
+            
+            <div class="acc-grid">
+                <div class="card acc-card fade-in-up" style="transition-delay: 0.2s">
+                    <h3 data-i18n="accHotel1">Hotel Segnaposto 1</h3>
+                    <p data-i18n="accHotel1Desc">Struttura elegante a pochi minuti dal Pazo de Moreira. Camere accoglienti e colazione inclusa.</p>
+                    <a href="https://www.hotelriasbajas.com/" target="_blank" class="link-btn" data-i18n="accLink">Visita il sito o prenota</a>
+                </div>
+                <div class="card acc-card fade-in-up" style="transition-delay: 0.35s">
+                    <h3 data-i18n="accHotel2">Hotel Segnaposto 2</h3>
+                    <p data-i18n="accHotel2Desc">Soluzione più economica al centro del paese, ben collegata per eventuali trasporti.</p>
+                    <a href="#" class="link-btn" data-i18n="accLink">Visita il sito</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tourism" class="section bg-powder">
+        <div class="container fade-in-up">
+            <h2 class="section-title fade-in-up" data-i18n="placesTitle">Cosa Vedere nei Dintorni</h2>
+            <p class="section-subtitle fade-in-up" style="transition-delay: 0.1s" data-i18n="placesSubtitle">Approfittate del viaggio per scoprire la meraviglia della Galizia. Ecco 5 luoghi magici:</p>
+            
+            <div class="places-grid">
+                <div class="card place-card fade-in-up" style="transition-delay: 0.15s">
+                    <h3 data-i18n="place1Title">1. Santiago de Compostela</h3>
+                    <p class="small-text" data-i18n="place1Desc">La maestosa e millenaria fine del Cammino, con piazze iconiche e un labirintico centro storico Patrimonio dell'Umanità. L'atmosfera tra i suoi vicoli in pietra vulcanica è unica al mondo.</p>
+                    <div class="transit-info" data-i18n="place1Transit">🚆 <strong>Treno:</strong> 35-40 min (Molto consigliato)<br>🚗 <strong>Auto:</strong> 45 min tramite autostrada AP-9<br>🚌 <strong>Bus:</strong> Circa 1 ora dal centro</div>
+                </div>
+                
+                <div class="card place-card fade-in-up" style="transition-delay: 0.2s">
+                    <h3 data-i18n="place2Title">2. Isole Cíes</h3>
+                    <p class="small-text" data-i18n="place2Desc">Un arcipelago paradisiaco parte del Parco Nazionale delle Isole Atlantiche. Spiagge di sabbia bianca caraibica e acque cristalline, incontaminate e protette.</p>
+                    <div class="transit-info" data-i18n="place2Transit">🚗/🚌 <strong>Vigo:</strong> 30 min da Pontevedra (Treno/Auto/Bus)<br>⛴️ <strong>Traghetto:</strong> 40 min da Vigo (Permesso e prenotazione anticipata obbligatori)</div>
+                </div>
+                
+                <div class="card place-card fade-in-up" style="transition-delay: 0.25s">
+                    <h3 data-i18n="place3Title">3. Combarro</h3>
+                    <p class="small-text" data-i18n="place3Desc">Un pittoresco borgo di pescatori, famoso per i suoi antichi 'hórreos' (granai tipici in pietra) che si affacciano direttamente sul fianco della scogliera accarezzati dalla marea.</p>
+                    <div class="transit-info" data-i18n="place3Transit">🚗 <strong>Auto:</strong> A soli 15 min via strada PO-308<br>🚌 <strong>Bus:</strong> 25 min diretti dalla stazione di Pontevedra<br>🚆 <strong>Treno:</strong> Non disponibile</div>
+                </div>
+                
+                <div class="card place-card fade-in-up" style="transition-delay: 0.3s">
+                    <h3 data-i18n="place4Title">4. Baiona</h3>
+                    <p class="small-text" data-i18n="place4Desc">Elegante e storica cittadina costiera cinta dalle mura dello spettacolare castello/fortezza di Monterreal, circondato dall'oceano e da sentieri marittimi.</p>
+                    <div class="transit-info" data-i18n="place4Transit">🚗 <strong>Auto:</strong> 40 min via autostrada AP-9<br>🚌 <strong>Bus:</strong> Circa 1 ora (generalmente con cambio a Vigo)<br>🚆 <strong>Treno:</strong> La stazione più vicina è Vigo</div>
+                </div>
+                
+                <div class="card place-card fade-in-up" style="transition-delay: 0.35s">
+                    <h3 data-i18n="place5Title">5. Cambados</h3>
+                    <p class="small-text" data-i18n="place5Desc">La nobile capitale del vino Albariño. Godetevi l'elegante centro storico pieno di Pazi (antiche ville), le cantine (bodegas) e le rovine celtiche di Santa Mariña Dozo.</p>
+                    <div class="transit-info" data-i18n="place5Transit">🚗 <strong>Auto:</strong> 30 min scorrevoli via AG-41<br>🚌 <strong>Bus:</strong> Circa 45 min diretti dalla stazione<br>🚆 <strong>Treno:</strong> Non passa per il villaggio</div>
+                </div>
+
+                <div class="card place-card fade-in-up" style="transition-delay: 0.4s">
+                    <h3 data-i18n="place6Title">6. Playa de La Lanzada</h3>
+                    <p class="small-text" data-i18n="place6Desc">Una tra le spiagge più vaste e spettacolari della Galizia.</p>
+                    <div class="transit-info" data-i18n="place6Transit">...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="food" class="section bg-light">
+        <div class="container fade-in-up">
+            <h2 class="section-title fade-in-up" data-i18n="foodTitle">Dove Mangiare a Pontevedra</h2>
+            <p class="section-subtitle fade-in-up" style="transition-delay: 0.1s" data-i18n="foodSubtitle">I nostri 6 indirizzi del cuore per scoprire i veri sapori della gastronomia galiziana.</p>
+            
+            <div class="places-grid">
+                <div class="card place-card fade-in-up" style="transition-delay: 0.15s">
+                    <h3 data-i18n="food1Title">1. La Estafeta</h3>
+                    <p class="small-text" data-i18n="food1Desc">Raxo e chipirones.</p>
+                </div>
+                <div class="card place-card fade-in-up" style="transition-delay: 0.2s">
+                    <h3 data-i18n="food2Title">2. Pintxo Viño</h3>
+                    <p class="small-text" data-i18n="food2Desc">Vino e pinchos.</p>
+                </div>
+                <div class="card place-card fade-in-up" style="transition-delay: 0.25s">
+                    <h3 data-i18n="food3Title">3. Casa Fidel</h3>
+                    <p class="small-text" data-i18n="food3Desc">Il vero polpo alla gallega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-monogram">A & D</div>
+            <div class="ornament">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
+            <p class="footer-msg" data-i18n="footerText">Ci vediamo presto! Ana & Domenico</p>
+            <p class="footer-date">22 · 08 · 2026</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
