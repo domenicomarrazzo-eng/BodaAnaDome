@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // --- CONFIGURAZIONE FORMSPREE ---
             // Sostituisci 'TUO_ID_FORMSPREE' con il codice che ti darà Formspree
-            const FORMSPREE_ENDPOINT = "https://formspree.io/f/TUO_ID_FORMSPREE";
+            const FORMSPREE_ENDPOINT = "https://formspree.io/f/mreoogaz";
             
             const btn = form.querySelector('button[type="submit"]');
             const btnSpan = btn.querySelector('span');
