@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // --- CONFIGURAZIONE GOOGLE SCRIPT ---
             // Incolla qui l'URL che ottieni dopo aver pubblicato lo script su Google
-            const GOOGLE_SCRIPT_URL = "INCOLLA_QUI_IL_TUO_URL_DI_GOOGLE";
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzpbauK7APGUoMTNCvSHcwptNHKZDZbXRcC7jU0DSDGu42pZiQZe7twAxB7RMhxhkdf/exec";
             
             const btn = form.querySelector('button[type="submit"]');
             const btnSpan = btn.querySelector('span');
