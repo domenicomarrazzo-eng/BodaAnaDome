@@ -175,36 +175,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 6. RSVP FORM SUBMISSION MOCK ---
+    // --- 6. RSVP FORM SUBMISSION (FORMSPREE) ---
     const form = document.getElementById('rsvp-form');
     const formMessage = document.getElementById('form-message');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Disable button to prevent double submission
-        const btn = form.querySelector('button[type="submit"]');
-        const btnSpan = btn.querySelector('span');
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
-        if (btnSpan) btnSpan.innerText = '...';
-
-        // Simulate network request
-        setTimeout(() => {
-            form.reset();
-            // Hide bus seats on reset
-            if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
-            formMessage.classList.remove('hidden');
-            btn.disabled = false;
-            btn.style.opacity = '1';
-            if (btnSpan) btnSpan.innerText = dict[currentLang].rsvpSubmit || 'Invia';
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
-        }, 1500);
-    });
+            // --- CONFIGURAZIONE FORMSPREE ---
+            // Sostituisci 'TUO_ID_FORMSPREE' con il codice che ti darà Formspree
+            const FORMSPREE_ENDPOINT = "https://formspree.io/f/TUO_ID_FORMSPREE";
+            
+            const btn = form.querySelector('button[type="submit"]');
+            const btnSpan = btn.querySelector('span');
+            const originalBtnText = btnSpan ? btnSpan.innerText : 'Invia';
+
+            // Stato di caricamento
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            if (btnSpan) btnSpan.innerText = '...';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
+                    formMessage.classList.remove('hidden');
+                    formMessage.style.color = "var(--clr-eucalyptus)";
+                    formMessage.innerHTML = `<span data-i18n="rsvpSuccess">${dict[currentLang].rsvpSuccess}</span>`;
+                } else {
+                    const data = await response.json();
+                    throw new Error(data.error || 'Errore durante l\'invio');
+                }
+            } catch (error) {
+                console.error("Errore RSVP:", error);
+                formMessage.classList.remove('hidden');
+                formMessage.style.color = "red";
+                formMessage.innerText = currentLang === 'it' 
+                    ? "Ops! C'è stato un errore. Riprova più tardi." 
+                    : "¡Ops! Hubo un error. Por favor, inténtalo más tarde.";
+            } finally {
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                if (btnSpan) btnSpan.innerText = originalBtnText;
+            }
+        });
+    }
 
     // Initialize translations at the end so all DOM elements are declared
     setLanguage(currentLang);

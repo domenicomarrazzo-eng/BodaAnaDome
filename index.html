@@ -109,19 +109,19 @@
                 <form id="rsvp-form" class="rsvp-form">
                     <div class="form-group">
                         <label for="name" data-i18n="rsvpName">Nome e Cognome</label>
-                        <input type="text" id="name" required class="form-control">
+                        <input type="text" id="name" name="nome_completo" required class="form-control">
                     </div>
                     
                     <div class="form-group">
                         <label data-i18n="rsvpAttendance">Ci sarai?</label>
                         <div class="radio-group">
                             <label class="radio-label">
-                                <input type="radio" name="attending" value="yes" required> 
+                                <input type="radio" name="presenza" value="si" required> 
                                 <span class="radio-custom"></span>
                                 <span data-i18n="rsvpYes">Sì, con gioia!</span>
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="attending" value="no"> 
+                                <input type="radio" name="presenza" value="no"> 
                                 <span class="radio-custom"></span>
                                 <span data-i18n="rsvpNo">Purtroppo non potrò</span>
                             </label>
@@ -130,22 +130,22 @@
                     
                     <div class="form-group">
                         <label for="guests" data-i18n="rsvpGuests">Numero di adulti (incluso te)</label>
-                        <input type="number" id="guests" min="1" max="10" value="1" class="form-control">
+                        <input type="number" id="guests" name="adulti" min="1" max="10" value="1" class="form-control">
                     </div>
                     
                     <div class="form-group">
                         <label for="children" data-i18n="rsvpChildren">Numero di bambini</label>
-                        <input type="number" id="children" min="0" max="10" value="0" class="form-control">
+                        <input type="number" id="children" name="bambini" min="0" max="10" value="0" class="form-control">
                     </div>
                     
                     <div class="form-group">
                         <label for="diet" data-i18n="rsvpDiet">Restrizioni alimentari o allergie</label>
-                        <textarea id="diet" rows="3" placeholder="..." class="form-control" data-placeholder-i18n="rsvpDietPlaceholder"></textarea>
+                        <textarea id="diet" name="dieta_allergie" rows="3" placeholder="..." class="form-control" data-placeholder-i18n="rsvpDietPlaceholder"></textarea>
                     </div>
                     
                     <div class="form-group checkbox-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" id="bus-transfer">
+                            <input type="checkbox" id="bus-transfer" name="usa_bus">
                             <span class="checkbox-custom"></span>
                             <span class="bus-text" data-i18n="rsvpBus">Desidero usufruire del servizio bus navetta.</span>
                         </label>
@@ -155,7 +155,7 @@
                         <div style="display:flex; gap: 1.5rem; flex-wrap: wrap;">
                            <div style="flex:1; min-width: 150px;">
                                <label for="bus-journey" data-i18n="rsvpBusJourney">Tragitto</label>
-                               <select id="bus-journey" class="form-control">
+                               <select id="bus-journey" name="bus_tragitto" class="form-control">
                                    <option value="both" data-i18n="rsvpBusBoth">Andata e Ritorno</option>
                                    <option value="going" data-i18n="rsvpBusGoing">Solo Andata</option>
                                    <option value="return" data-i18n="rsvpBusReturn">Solo Ritorno</option>
@@ -163,7 +163,7 @@
                            </div>
                            <div style="flex:1; min-width: 150px;">
                                <label for="bus-location" data-i18n="rsvpBusLocation">Punto di Partenza</label>
-                               <select id="bus-location" class="form-control">
+                               <select id="bus-location" name="bus_partenza" class="form-control">
                                    <option value="Caldas de Reis">Caldas de Reis</option>
                                    <option value="Pontevedra">Pontevedra</option>
                                </select>
@@ -171,7 +171,7 @@
                         </div>
                         <div style="margin-top: 1.5rem;">
                            <label for="bus-seats" data-i18n="rsvpBusSeats">Quanti posti servono sull'autobus?</label>
-                           <input type="number" id="bus-seats" min="1" max="10" value="1" class="form-control">
+                           <input type="number" id="bus-seats" name="bus_posti" min="1" max="10" value="1" class="form-control">
                         </div>
                     </div>
                     
