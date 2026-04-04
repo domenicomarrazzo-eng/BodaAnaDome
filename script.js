@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 6. RSVP FORM SUBMISSION (FORMSPREE) ---
+    // --- 6. RSVP FORM SUBMISSION (GOOGLE SHEETS) ---
     const form = document.getElementById('rsvp-form');
     const formMessage = document.getElementById('form-message');
 
@@ -183,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // --- CONFIGURAZIONE FORMSPREE ---
-            // Sostituisci 'TUO_ID_FORMSPREE' con il codice che ti darà Formspree
-            const FORMSPREE_ENDPOINT = "https://formspree.io/f/mreoogaz";
+            // --- CONFIGURAZIONE GOOGLE SCRIPT ---
+            // Incolla qui l'URL che ottieni dopo aver pubblicato lo script su Google
+            const GOOGLE_SCRIPT_URL = "INCOLLA_QUI_IL_TUO_URL_DI_GOOGLE";
             
             const btn = form.querySelector('button[type="submit"]');
             const btnSpan = btn.querySelector('span');
@@ -196,27 +196,34 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.opacity = '0.7';
             if (btnSpan) btnSpan.innerText = '...';
 
+            // Prepariamo i dati per Google (URL-encoded)
             const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value });
+            
+            // Per GAS è spesso più semplice inviare come una stringa di parametri
+            const params = new URLSearchParams(data).toString();
 
             try {
-                const response = await fetch(FORMSPREE_ENDPOINT, {
+                // Usiamo mode 'no-cors' se necessario, ma con Apps Script 
+                // una richiesta POST standard solitamente va bene.
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    body: formData,
+                    mode: 'no-cors', // Spesso richiesto per Apps Script per evitare errori CORS
+                    body: params,
                     headers: {
-                        'Accept': 'application/json'
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 });
 
-                if (response.ok) {
-                    form.reset();
-                    if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
-                    formMessage.classList.remove('hidden');
-                    formMessage.style.color = "var(--clr-eucalyptus)";
-                    formMessage.innerHTML = `<span data-i18n="rsvpSuccess">${dict[currentLang].rsvpSuccess}</span>`;
-                } else {
-                    const data = await response.json();
-                    throw new Error(data.error || 'Errore durante l\'invio');
-                }
+                // Con 'no-cors', non possiamo leggere response.ok, quindi assumiamo successo
+                // se non viene lanciata un'eccezione dal fetch stesso.
+                form.reset();
+                if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
+                formMessage.classList.remove('hidden');
+                formMessage.style.color = "var(--clr-eucalyptus)";
+                formMessage.innerHTML = `<span data-i18n="rsvpSuccess">${dict[currentLang].rsvpSuccess}</span>`;
+                
             } catch (error) {
                 console.error("Errore RSVP:", error);
                 formMessage.classList.remove('hidden');
