@@ -75,11 +75,17 @@
                 <div class="info-card card fade-in-up" style="transition-delay: 0.1s">
                     <h3 data-i18n="infoPrebodaTitle" style="color: var(--clr-eucalyptus); margin-bottom: 1.5rem; text-align: center; border-bottom: 1px solid rgba(189,203,184,0.3); padding-bottom: 0.8rem; font-size: 1.8rem;">Preboda</h3>
                     <p class="small-text" style="text-align:center; margin-top:-1rem; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-body); letter-spacing: 2px;" data-i18n="infoPrebodaDate">21 Agosto 2026</p>
-                    <h4>📍 <span data-i18n="infoLocationTitle">Location</span></h4>
+                    <h4 class="info-label">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span data-i18n="infoLocationTitle">Location</span>
+                    </h4>
                     <p class="highlight-text"><strong><a href="https://share.google/eH7DnKt94DVAnjvW6" target="_blank" style="color: inherit; text-decoration: underline;">O Sanatorio</a></strong></p>
                     <p data-i18n="infoPrebodaCity">Pontevedra</p>
                     <div style="margin-top: 1.5rem;">
-                        <h4>🕒 <span data-i18n="infoTimeTitle">Orario</span></h4>
+                        <h4 class="info-label">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span data-i18n="infoTimeTitle">Orario</span>
+                        </h4>
                         <p data-i18n="infoPrebodaTime">Inizio: <strong>20:00</strong></p>
                     </div>
                 </div>
@@ -87,15 +93,24 @@
                 <div class="info-card card fade-in-up" style="transition-delay: 0.25s">
                     <h3 data-i18n="infoBodaTitle" style="color: var(--clr-eucalyptus); margin-bottom: 1.5rem; text-align: center; border-bottom: 1px solid rgba(189,203,184,0.3); padding-bottom: 0.8rem; font-size: 1.8rem;">Boda</h3>
                     <p class="small-text" style="text-align:center; margin-top:-1rem; margin-bottom: 1.5rem; font-weight: 500; font-family: var(--font-body); letter-spacing: 2px;" data-i18n="infoBodaDate">22 Agosto 2026</p>
-                    <h4>📍 <span data-i18n="infoLocationTitle">Location</span></h4>
+                    <h4 class="info-label">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span data-i18n="infoLocationTitle">Location</span>
+                    </h4>
                     <p class="highlight-text"><strong><a href="https://gloriadomecqcatering.com/pazo-moreira/" target="_blank" style="color: inherit; text-decoration: underline;">Pazo de Moreira</a></strong></p>
                     <p data-i18n="infoBodaCity">Ponteareas, Galizia</p>
                     <div style="margin-top: 1.5rem;">
-                        <h4>🕒 <span data-i18n="infoTimeTitle">Orario</span></h4>
+                        <h4 class="info-label">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span data-i18n="infoTimeTitle">Orario</span>
+                        </h4>
                         <p data-i18n="infoBodaTime">Inizio Cerimonia: <strong>13:00</strong></p>
                     </div>
                     <div style="margin-top: 1.5rem;">
-                        <h4>🚌 <span data-i18n="infoBusTitle">Navetta</span></h4>
+                        <h4 class="info-label">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="22" height="13" rx="2" ry="2"></rect><line x1="7" y1="21" x2="7" y2="16"></line><line x1="17" y1="21" x2="17" y2="16"></line><line x1="1" y1="8" x2="23" y2="8"></line></svg>
+                            <span data-i18n="infoBusTitle">Navetta</span>
+                        </h4>
                         <p data-i18n="infoBodaBus">Partenza alle <strong>12:15</strong> da <a href="https://maps.app.goo.gl/6qJfuxFLxmpvCWQb8" target="_blank" style="text-decoration: underline; font-weight: normal; color: inherit;">Praza de Galicia</a></p>
                     </div>
                 </div>
@@ -131,14 +146,16 @@
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="guests" data-i18n="rsvpGuests">Numero di adulti (incluso te)</label>
-                        <input type="number" id="guests" name="adulti" min="1" max="10" value="1" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="children" data-i18n="rsvpChildren">Numero di bambini</label>
-                        <input type="number" id="children" name="bambini" min="0" max="10" value="0" class="form-control">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests" data-i18n="rsvpGuests">Numero di adulti (incluso te)</label>
+                            <input type="number" id="guests" name="adulti" min="1" max="10" value="1" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="children" data-i18n="rsvpChildren">Numero di bambini</label>
+                            <input type="number" id="children" name="bambini" min="0" max="10" value="0" class="form-control">
+                        </div>
                     </div>
                     
                     <div class="form-group">

@@ -58,19 +58,21 @@ h1, h2, h3, .title, .brand-ampersand, .ampersand {
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     text-align: center;
+    letter-spacing: -0.5px;
 }
 
 .subtitle, .section-subtitle {
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    color: var(--clr-text-light);
-    font-weight: 300;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--clr-sage-dark);
+    font-weight: 400;
     text-align: center;
-    margin-bottom: 3rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 3.5rem;
+    letter-spacing: 0.2px;
 }
 
 /* Ornamental Section Divider */
@@ -486,12 +488,47 @@ h2 {
     margin-top: 2rem;
 }
 
-.place-card {
-    height: 100%;
+.info-card {
+    text-align: center; /* Forza la centratura di tutto il testo nella card */
+}
+
+.place-card h4, .info-label {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--clr-eucalyptus);
+    margin-bottom: 0.8rem;
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 2.5rem;
+    align-items: center;
+    justify-content: center; /* Centra l'icona con il testo */
+    gap: 0.8rem;
+}
+
+.info-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--clr-eucalyptus);
+    flex-shrink: 0;
+}
+
+.highlight-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--clr-eucalyptus);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.info-card p {
+    margin-bottom: 0.5rem;
+}
+
+.info-card .info-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 1.5rem auto 0.8rem;
 }
 
 .place-card h3 {
@@ -554,20 +591,45 @@ h2 {
 
 /* Form Styles */
 .form-container {
-    max-width: 600px;
+    max-width: 580px;
     margin: 0 auto;
 }
 
+.rsvp-section {
+    padding-bottom: 5rem;
+}
+
+.rsvp-form {
+    width: 100%;
+}
+
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     text-align: left;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    align-items: flex-end; /* Allinea correttamente i box se le label hanno altezze diverse */
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 0;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.2rem;
     color: var(--clr-eucalyptus);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
 }
 
 .form-control {
@@ -575,11 +637,19 @@ h2 {
     padding: 1.2rem 1.5rem;
     border: 1px solid rgba(189, 203, 184, 0.3);
     border-radius: 12px;
-    font-family: var(--font-body);
+    font-family: var(--font-body); /* Assicura che sia usato Inter */
     font-size: 1rem;
+    color: var(--clr-text);
     background-color: rgba(255,255,255,0.6);
     transition: var(--transition-smooth);
     box-shadow: var(--shadow-input);
+    -webkit-appearance: none; /* Rimuove lo stile di sistema */
+    appearance: none;
+}
+
+textarea.form-control {
+    resize: none; /* Impedisce l'allargamento manuale del box */
+    min-height: 120px;
 }
 
 .form-control:focus {
