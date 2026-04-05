@@ -357,6 +357,52 @@ h2 {
     font-weight: 500;
 }
 
+.hero-bio-container {
+    margin-top: 3rem;
+    position: relative;
+    max-width: 650px; /* Più largo per accogliere il banner */
+    text-align: left;
+}
+
+.hero-placeholder {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.45;
+    color: #44554c; /* Un verde saggio molto scuro ed elegante */
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-floral-ornament {
+    width: 100%;
+    max-width: 650px;
+    height: 180px; /* Altezza adeguata per il banner */
+    margin-top: 1rem;
+    margin-left: -20px;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-bio-container {
+    margin-top: 3.5rem;
+    position: relative;
+    max-width: 550px;
+    text-align: left;
+}
+
+.hero-placeholder {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--clr-sage-dark);
+    position: relative;
+    z-index: 2;
+}
+
 .hero-img-container {
     flex: 1;
     width: 100%;
@@ -856,5 +902,15 @@ footer {
     
     .cd-number {
         font-size: 2rem;
+    }
+    
+    .hero-bio-container {
+        text-align: center;
+        margin: 3rem auto 0;
+    }
+    
+    .hero-floral-ornament {
+        margin: 0 auto;
+        width: 150px;
     }
 }
