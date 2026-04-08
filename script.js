@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. LANGUAGE & TRANSLATIONS ---
     let currentLang = window.defaultLang || 'es';
     const dict = window.translations || {};
@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateTranslations = (lang) => {
         if (!dict[lang]) return;
-        
+
         // Update simple text elements
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (dict[lang][key]) {
-                el.innerHTML = dict[lang][key]; 
+                el.innerHTML = dict[lang][key];
             }
         });
 
@@ -182,11 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             // --- CONFIGURAZIONE GOOGLE SCRIPT ---
             // Incolla qui l'URL che ottieni dopo aver pubblicato lo script su Google
-            const GOOGLE_SCRIPT_URL = "INCOLLA_QUI_IL_TUO_URL_DI_GOOGLE";
-            
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoyRRQ77VdlhQHCprsnqoJYoKFkGXSsh063q1G5vZ7DuFLSgtlDkBGOzYhTUmRITjX/exec";
+
             const btn = form.querySelector('button[type="submit"]');
             const btnSpan = btn.querySelector('span');
             const originalBtnText = btnSpan ? btnSpan.innerText : 'Invia';
@@ -200,37 +200,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const data = {};
             formData.forEach((value, key) => { data[key] = value });
-            
+
             // Per GAS è spesso più semplice inviare come una stringa di parametri
             const params = new URLSearchParams(data).toString();
 
             try {
-                // Usiamo mode 'no-cors' se necessario, ma con Apps Script 
-                // una richiesta POST standard solitamente va bene.
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
-                    mode: 'no-cors', // Spesso richiesto per Apps Script per evitare errori CORS
                     body: params,
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 });
 
-                // Con 'no-cors', non possiamo leggere response.ok, quindi assumiamo successo
-                // se non viene lanciata un'eccezione dal fetch stesso.
-                form.reset();
-                if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
-                formMessage.classList.remove('hidden');
-                formMessage.style.color = "var(--clr-eucalyptus)";
-                formMessage.innerHTML = `<span data-i18n="rsvpSuccess">${dict[currentLang].rsvpSuccess}</span>`;
-                
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    form.reset();
+                    if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
+                    formMessage.classList.remove('hidden');
+                    formMessage.style.color = "var(--clr-eucalyptus)";
+                    formMessage.innerHTML = `<span data-i18n="rsvpSuccess">${dict[currentLang].rsvpSuccess}</span>`;
+                } else {
+                    throw new Error(result.message || "Server Error");
+                }
+
             } catch (error) {
                 console.error("Errore RSVP:", error);
                 formMessage.classList.remove('hidden');
-                formMessage.style.color = "red";
-                formMessage.innerText = currentLang === 'it' 
-                    ? "Ops! C'è stato un errore. Riprova più tardi." 
-                    : "¡Ops! Hubo un error. Por favor, inténtalo más tarde.";
+                formMessage.style.color = "#d9534f"; // Red for error
+                formMessage.innerHTML = `<span data-i18n="rsvpError">${dict[currentLang].rsvpError}</span>`;
             } finally {
                 btn.disabled = false;
                 btn.style.opacity = '1';
