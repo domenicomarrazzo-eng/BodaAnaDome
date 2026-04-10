@@ -761,22 +761,25 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: 100%;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, var(--clr-powder-blue-dark), var(--clr-eucalyptus));
-    color: white;
-    border: none;
-    border-radius: 12px;
+    width: auto;
+    min-width: 220px;
+    padding: 0.8rem 2.8rem;
+    background: transparent;
+    color: var(--clr-eucalyptus);
+    border: 1px solid var(--clr-eucalyptus);
+    border-radius: 30px;
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     cursor: pointer;
-    transition: var(--transition-smooth);
-    margin-top: 1rem;
+    transition: all 0.3s ease;
+    margin: 1rem auto 0;
     position: relative;
     overflow: hidden;
     z-index: 1;
+    text-decoration: none;
 }
 
 .btn::before {
@@ -790,42 +793,13 @@ textarea.form-control {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(91, 112, 101, 0.2);
-}
-
-.btn:hover::before {
-    opacity: 1;
-}
-
-.hidden { display: none; }
-
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 0.8rem 2.5rem;
-    background: transparent;
-    color: var(--clr-eucalyptus);
-    border: 1px solid var(--clr-eucalyptus);
-    border-radius: 30px;
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-outline:hover {
     background-color: var(--clr-eucalyptus);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(91, 112, 101, 0.15);
+    box-shadow: 0 5px 15px rgba(91, 112, 101, 0.15);
 }
+
+.hidden { display: none; }
 
 .form-message {
     margin-top: 2rem;
