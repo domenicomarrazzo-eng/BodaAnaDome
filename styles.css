@@ -161,11 +161,10 @@ h2 {
 .nav-links a {
     text-decoration: none;
     color: var(--clr-text);
-    font-size: 0.95rem;
-    font-weight: 500;
-    font-style: italic;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: var(--font-heading);
+    font-size: 1.35rem; /* Increased size because serif fonts appear smaller */
+    font-weight: 400; /* Match section title weight */
+    font-style: italic; /* Match section title style */
     transition: var(--transition-smooth);
     position: relative;
     padding-bottom: 4px;
@@ -943,15 +942,19 @@ footer {
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -100%;
         height: 100vh;
+        height: 100dvh; /* Migliore per browser mobili moderni */
         width: 100%;
         background-color: rgba(252, 246, 245, 0.98);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        overflow-y: auto; /* Permette lo scorrimento se le voci sono troppe */
         transition: right 0.4s ease;
     }
 
@@ -964,7 +967,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .hero .title {
