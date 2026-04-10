@@ -448,6 +448,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: 90px;
 }
 
 .container {
@@ -459,6 +460,7 @@ h2 {
 
 .bg-light { background-color: var(--clr-blush); }
 .bg-sage { background-color: var(--clr-sage-light); }
+.bg-sage-medium { background-color: var(--clr-sage); }
 .bg-powder { background-color: var(--clr-powder-blue-light); }
 
 .card {
@@ -797,6 +799,33 @@ textarea.form-control {
 }
 
 .hidden { display: none; }
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 2.5rem;
+    background: transparent;
+    color: var(--clr-eucalyptus);
+    border: 1px solid var(--clr-eucalyptus);
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-eucalyptus);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(91, 112, 101, 0.15);
+}
 
 .form-message {
     margin-top: 2rem;
