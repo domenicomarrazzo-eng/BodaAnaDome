@@ -245,39 +245,48 @@
             
             <div class="places-grid">
                 <div class="card place-card fade-in-up" style="transition-delay: 0.15s">
+                    <div class="bubbles-decor">
+                        <div class="bubble"><img src="assets/turismo/santiago.jpg" alt="Santiago"></div>
+                    </div>
                     <h3 data-i18n="place1Title">1. Santiago de Compostela</h3>
                     <p class="small-text" data-i18n="place1Desc">La maestosa e millenaria fine del Cammino, con piazze iconiche e un labirintico centro storico Patrimonio dell'Umanità. L'atmosfera tra i suoi vicoli in pietra vulcanica è unica al mondo.</p>
                     <div class="transit-info" data-i18n="place1Transit">🚆 <strong>Treno:</strong> 35-40 min (Molto consigliato)<br>🚗 <strong>Auto:</strong> 45 min tramite autostrada AP-9<br>🚌 <strong>Bus:</strong> Circa 1 ora dal centro</div>
                 </div>
                 
                 <div class="card place-card fade-in-up" style="transition-delay: 0.2s">
+                    <div class="bubbles-decor">
+                        <div class="bubble"><img src="assets/turismo/cies.jpg" alt="Islas Cíes"></div>
+                    </div>
                     <h3 data-i18n="place2Title">2. Isole Cíes</h3>
                     <p class="small-text" data-i18n="place2Desc">Un arcipelago paradisiaco parte del Parco Nazionale delle Isole Atlantiche. Spiagge di sabbia bianca caraibica e acque cristalline, incontaminate e protette.</p>
                     <div class="transit-info" data-i18n="place2Transit">🚗/🚌 <strong>Vigo:</strong> 30 min da Pontevedra (Treno/Auto/Bus)<br>⛴️ <strong>Traghetto:</strong> 40 min da Vigo (Permesso e prenotazione anticipata obbligatori)</div>
                 </div>
                 
                 <div class="card place-card fade-in-up" style="transition-delay: 0.25s">
+                    <div class="bubbles-decor">
+                        <div class="bubble"><img src="assets/turismo/combarro.jpg" alt="Combarro"></div>
+                    </div>
                     <h3 data-i18n="place3Title">3. Combarro</h3>
                     <p class="small-text" data-i18n="place3Desc">Un pittoresco borgo di pescatori, famoso per i suoi antichi 'hórreos' (granai tipici in pietra) che si affacciano direttamente sul fianco della scogliera accarezzati dalla marea.</p>
                     <div class="transit-info" data-i18n="place3Transit">🚗 <strong>Auto:</strong> A soli 15 min via strada PO-308<br>🚌 <strong>Bus:</strong> 25 min diretti dalla stazione di Pontevedra<br>🚆 <strong>Treno:</strong> Non disponibile</div>
                 </div>
                 
                 <div class="card place-card fade-in-up" style="transition-delay: 0.3s">
+                    <div class="bubbles-decor">
+                        <div class="bubble"><img src="assets/turismo/baiona.jpg" alt="Baiona"></div>
+                    </div>
                     <h3 data-i18n="place4Title">4. Baiona</h3>
                     <p class="small-text" data-i18n="place4Desc">Elegante e storica cittadina costiera cinta dalle mura dello spettacolare castello/fortezza di Monterreal, circondato dall'oceano e da sentieri marittimi.</p>
                     <div class="transit-info" data-i18n="place4Transit">🚗 <strong>Auto:</strong> 40 min via autostrada AP-9<br>🚌 <strong>Bus:</strong> Circa 1 ora (generalmente con cambio a Vigo)<br>🚆 <strong>Treno:</strong> La stazione più vicina è Vigo</div>
                 </div>
                 
                 <div class="card place-card fade-in-up" style="transition-delay: 0.35s">
-                    <h3 data-i18n="place5Title">5. Cambados</h3>
-                    <p class="small-text" data-i18n="place5Desc">La nobile capitale del vino Albariño. Godetevi l'elegante centro storico pieno di Pazi (antiche ville), le cantine (bodegas) e le rovine celtiche di Santa Mariña Dozo.</p>
-                    <div class="transit-info" data-i18n="place5Transit">🚗 <strong>Auto:</strong> 30 min scorrevoli via AG-41<br>🚌 <strong>Bus:</strong> Circa 45 min diretti dalla stazione<br>🚆 <strong>Treno:</strong> Non passa per il villaggio</div>
-                </div>
-
-                <div class="card place-card fade-in-up" style="transition-delay: 0.4s">
-                    <h3 data-i18n="place6Title">6. Playa de La Lanzada</h3>
-                    <p class="small-text" data-i18n="place6Desc">Una tra le spiagge più vaste e spettacolari della Galizia.</p>
-                    <div class="transit-info" data-i18n="place6Transit">...</div>
+                    <div class="bubbles-decor">
+                        <div class="bubble"><img src="assets/turismo/lanzada.jpg" alt="O Grove, Isla de la Toja & La Lanzada"></div>
+                    </div>
+                    <h3 data-i18n="place5Title">5. O Grove, Isola di La Toja e La Lanzada</h3>
+                    <p class="small-text" data-i18n="place5Desc">Una spettacolare penisola famosa per il suo pesce, l'elegante Isola di La Toja e la Playa de La Lanzada.</p>
+                    <div class="transit-info" data-i18n="place5Transit">🚗 <strong>Auto:</strong> 40 min via AP-9/AG-41<br>🚌 <strong>Bus:</strong> Corse frequenti durante l'estate</div>
                 </div>
             </div>
         </div>
@@ -340,6 +349,12 @@
         </div>
     </footer>
 
+    <div id="lightbox-overlay" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>

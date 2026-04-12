@@ -216,6 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.status === "success") {
+                    // Celebration effect if they said SI
+                    if (data.presenza === 'si' && typeof confetti === 'function') {
+                        launchPetals();
+                    }
+
                     form.reset();
                     if (busExtrasGroup) busExtrasGroup.classList.add('hidden');
                     formMessage.classList.remove('hidden');
@@ -235,6 +240,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.style.opacity = '1';
                 if (btnSpan) btnSpan.innerText = originalBtnText;
             }
+        });
+    }
+
+    // --- 7. PETAL EFFECT ---
+    function launchPetals() {
+        const count = 200;
+        const defaults = {
+            origin: { y: 0.7 },
+            colors: ['#bdcbb8', '#fcf6f5', '#82947b', '#f4efea'],
+            shapes: ['circle'],
+            gravity: 0.8,
+            scalar: 0.75,
+            drift: 0.5,
+        };
+
+        function fire(particleRatio, opts) {
+            confetti({
+                ...defaults,
+                ...opts,
+                particleCount: Math.floor(count * particleRatio)
+            });
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+    }
+
+    // --- 8. LIGHTBOX / TOURISM BUBBLES ---
+    const bubbles = document.querySelectorAll('.bubble');
+    const lightbox = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close-lightbox');
+
+    if (bubbles && lightbox) {
+        bubbles.forEach(bubble => {
+            bubble.addEventListener('click', () => {
+                const img = bubble.querySelector('img');
+                if (img) {
+                    // Convertiamo l'URL Unsplash in alta risoluzione per il lightbox
+                    const hiResUrl = img.src.replace('w=400', 'w=1200');
+                    lightboxImg.src = hiResUrl;
+                    lightbox.style.display = 'flex';
+                    setTimeout(() => lightbox.classList.add('active'), 10);
+                }
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            setTimeout(() => lightbox.style.display = 'none', 400);
+        };
+
+        closeBtn?.addEventListener('click', closeLightbox);
+        // Chiudi se clicchi fuori dall'immagine
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
         });
     }
 
