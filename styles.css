@@ -359,35 +359,6 @@ h2 {
 }
 
 .hero-bio-container {
-    margin-top: 3rem;
-    position: relative;
-    max-width: 650px; /* Più largo per accogliere il banner */
-    text-align: left;
-}
-
-.hero-placeholder {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 1.45rem;
-    line-height: 1.45;
-    color: #44554c; /* Un verde saggio molto scuro ed elegante */
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 2;
-}
-
-.hero-floral-ornament {
-    width: 100%;
-    max-width: 650px;
-    height: 180px; /* Altezza adeguata per il banner */
-    margin-top: 1rem;
-    margin-left: -20px;
-    position: relative;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.hero-bio-container {
     margin-top: 3.5rem;
     position: relative;
     max-width: 550px;
@@ -460,7 +431,6 @@ h2 {
 
 .bg-light { background-color: var(--clr-blush); }
 .bg-sage { background-color: var(--clr-sage-light); }
-.bg-sage-medium { background-color: var(--clr-sage); }
 .bg-powder { background-color: var(--clr-powder-blue-light); }
 
 .card {
@@ -555,15 +525,6 @@ h2 {
     color: var(--clr-sage-dark);
 }
 
-/* Floral motifs pseudo-elements */
-.floral-decoration {
-    font-size: 2rem;
-    opacity: 0.6;
-    margin: 1rem auto;
-    display: block;
-    text-align: center;
-}
-
 
 
 /* Info Grid */
@@ -578,26 +539,16 @@ h2 {
     font-size: 1.5rem;
 }
 
-.highlight-text {
-    font-size: 1.2rem;
-    color: var(--clr-eucalyptus);
-}
-
 .small-text {
     font-size: 0.95rem;
     color: var(--clr-text-light);
 }
 
 
-
 /* Form Styles */
 .form-container {
     max-width: 580px;
     margin: 0 auto;
-}
-
-.rsvp-section {
-    padding-bottom: 5rem;
 }
 
 .rsvp-form {
@@ -782,15 +733,6 @@ textarea.form-control {
     text-decoration: none;
 }
 
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--clr-eucalyptus), var(--clr-powder-blue-dark));
-    z-index: -1;
-    transition: opacity 0.5s ease;
-    opacity: 0;
-}
 
 .btn:hover {
     background-color: var(--clr-eucalyptus);
@@ -995,10 +937,6 @@ footer {
         right: 1.5rem;
     }
 
-    .side-decoration {
-        opacity: 0.1;
-        width: 12vw;
-    }
 
     .hero-layout {
         flex-direction: column-reverse;
@@ -1015,9 +953,6 @@ footer {
     
     .countdown {
         justify-content: center;
-    }
-    
-    .countdown {
         gap: 1rem;
     }
     
@@ -1030,8 +965,5 @@ footer {
         margin: 3rem auto 0;
     }
     
-    .hero-floral-ornament {
-        margin: 0 auto;
-        width: 150px;
-    }
+
 }
