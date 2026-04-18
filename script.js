@@ -201,6 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = {};
             formData.forEach((value, key) => { data[key] = value });
 
+            if (data['presenza'] === 'no' || !data['usa_bus']) {
+                data['bus_tragitto'] = '';
+                data['bus_partenza'] = '';
+                data['bus_posti'] = '';
+            }
+
             // Per GAS è spesso più semplice inviare come una stringa di parametri
             const params = new URLSearchParams(data).toString();
 
