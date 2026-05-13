@@ -179,7 +179,7 @@ const translations = {
         place2Transit: "🚗/🚌 <strong>Hasta Vigo:</strong> 30 min desde Pontevedra (Tren/Coche/Bus)<br>⛴️ <strong>Ferry:</strong> 40 min desde Vigo (<a href='https://autorizacionillasatlanticas.xunta.gal/illasr/inicio?lang=es' target='_blank' style='text-decoration:underline;'>Permiso estatal previo imprescindible</a>)",
         place3Title: "3. Combarro",
         place3Desc: "Un pintoresco pueblo de pescadores famoso por sus antiquísimos hórreos que se alinean al borde del mar sobre el granito.",
-        place3Transit: "🚗 <strong>Coche:</strong> Solo 15 min por la PO-308<br>🚌 <strong>Autobús:</strong> 25 min directos desde autobús de Pontevedra",
+        place3Transit: "🚗 <strong>Coche:</strong> Solo 15 min por la PO-308<br>🚌 <strong>Autobús:</strong> 25 min directos desde Pontevedra",
         place4Title: "4. Baiona",
         place4Desc: "Villa costera donde llegó originalmente la Pinta de Colón, presidida por la inmensa fortaleza de Monterreal, perfecta para un hermoso paseo marítimo.",
         place4Transit: "🚗 <strong>Coche:</strong> 40 min por la autopista AP-9<br>🚌 <strong>Autobús:</strong> Aprox. 1 hora (con trasbordo en Vigo)<br>🚆 <strong>Tren:</strong> Estación más cercana en Vigo",
