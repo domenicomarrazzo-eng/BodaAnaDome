@@ -44,7 +44,7 @@ const translations = {
         rsvpYes: "Sì, con gioia!",
         rsvpNo: "Purtroppo non potrò",
         rsvpGuests: "Numero di adulti (incluso te)",
-        rsvpChildren: "Numero di bambini (Animazione 16h-21h)",
+        rsvpChildren: "Numero di bambini",
         rsvpDiet: "Restrizioni alimentari o allergie",
         rsvpDietPlaceholder: "Nessuna, celiachia, vegetariano, vegano...",
         rsvpBus: "Desidero usufruire del servizio navetta per il giorno del matrimonio.",
